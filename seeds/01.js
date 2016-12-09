@@ -1,5 +1,8 @@
 exports.seed = function(knex, Promise) {
-  return knex('developer').del()
+  return knex('game').del()
+    .then(()=>{
+      return knex('developer').del();
+    })
     .then(function () {
       const developer = [{
         id:1,
